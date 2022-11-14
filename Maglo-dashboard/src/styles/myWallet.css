@@ -16,3 +16,36 @@
 .dashboard-spending-card-mainn{
    display: inline;
 }
+.column-one {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+  }
+  .column {
+    margin-top: 2em;
+  }
+  .reccuring-expense {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-one);
+    padding: 0 0 1em 0;
+  }
+  .recent-expenses-container {
+    border: 1px solid var(--border-one);
+    width: 100%;
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .expenses-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+  
+  .expenses-title {
+    margin-right: auto;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--text-one);
+  }
