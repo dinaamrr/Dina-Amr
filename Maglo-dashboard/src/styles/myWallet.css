@@ -1,0 +1,18 @@
+.dashboard-spending-card-main p{
+    display: inline;
+    margin-right: 50px;
+   
+}
+.green{
+    color: green;
+}
+.red{
+    color:red;
+}
+
+.dashboard-spending-card-main-title{
+    padding-top: 30px;
+}
+.dashboard-spending-card-mainn{
+   display: inline;
+}
