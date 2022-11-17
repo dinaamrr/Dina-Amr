@@ -8,6 +8,8 @@
   width: 100%;
   background: var(--background-one);
   color: var(--text-one);
+  padding-left: 50px;
+  overflow-x: hidden;
 }
 
 .signup-content {
@@ -88,8 +90,12 @@
   }
   .hand-image {
     display: none;
+    
   }
 }
 .logoo{
     padding-bottom: 150px;
+}
+.hand-image {
+    padding-left: 200px;
 }
