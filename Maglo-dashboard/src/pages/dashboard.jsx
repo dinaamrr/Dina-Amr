@@ -17,6 +17,92 @@ import {
     Legend,
     ResponsiveContainer,
   } from 'recharts';
+
+  const  dataa = [
+    {
+      "img":require("../assets/images/Avater.png"),
+      "title": "Saleh Ahmed",
+      "date" : "April 28 2022 at 11:00",
+      "paymentValue":"-$435,00",
+      "id" : 1
+    },
+    
+    {
+      "img":require("../assets/images/avatar2.png") ,
+      "title": "Delower hossain",
+      "date" : "April 25 2022 at 11:00",
+      "paymentValue":"-$132,00",
+      "id" : 2
+    },
+    
+    {
+      "img":require("../assets/images/avatar3.png") ,
+      "title": "Moinul Hasan Nayem",
+      "date" : "April 25 2022 at 11:00",
+      "paymentValue":"-$826,00",
+      "id" : 3
+    },
+    {
+      "img":require("../assets/images/avatar4.png") ,
+      "title": "Dr. Jubed Ahmed",
+      "date" : "April 26 2022 at 11:00",
+      "paymentValue":"-$435,00",
+      "id" : 4
+    },
+    {
+      "img":require("../assets/images/avatar5.png") ,
+      "title": "AR. Jakir Alp",
+      "date" : "April 14 2022 at 11:00",
+      "paymentValue":"-$288,00",
+      "id" : 5
+    }
+    ]
+    
+  const  dataInv = [
+    {
+        img:require('../assets/images/apple.png'),
+      title: "Iphone 13 Pro MAX",
+      status:"pending",
+      small:"Apple.Inc",
+      type:"Mobile",
+      Amount:"420.84$",
+      date : "14 Apr 2022 ",
+      time:"08:00 PM",
+      invoiceId: "0124877",
+      action:"...",
+      id : 1
+    },
+    {
+        img:require('../assets/images/netflix.png') ,
+        "title": "Netfilx Subscription",
+        small:"Netflix",
+        "status":"Netflix",
+        "type":"Entertainment",
+        "Amount":"100.00$",
+        "date" : "5 Apr 2022  ",
+        "time":"07:00 PM",
+        "invoiceId": "0124585",
+        "action":"...",
+        "id" : 7
+      },
+    {
+      img:require('../assets/images/figma.png') ,
+      "title": "Figma Subscription",
+      "status":"paid",
+      small:"Figma.Inc",
+      "type":"Software",
+      "Amount":"244.20$",
+      "date" : "02 Apr 2022 ",
+      "time":"06:00 PM",
+      "invoiceId": "0124843",
+      "action":"...",
+      "id" : 2
+    },
+  
+  
+    
+    
+    ]
   const data = [
     {
       name: 'Apr 14',
@@ -117,12 +203,12 @@ const Dashboard = () => {
 <div className='chart-container-header'>
   <h3>Working Capital</h3>
   </div>
-  <LineChart width={700} height={200} data={data}>
+  <LineChart width={600} height={200} data={data}>
     <XAxis dataKey="name"/>
     <YAxis/>
     <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
-    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-    <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+    <Line type="monotone" dataKey="uv" stroke="#008000" />
+    <Line type="monotone" dataKey="pv" stroke="#ffff00" />
   </LineChart>
   </div>
 
@@ -138,40 +224,37 @@ const Dashboard = () => {
             </svg>
               </Link>
 </div>
+<div>
 
-<table className='expenses-table'>
+</div>
+<table className="table  ">
 <thead>
-  <tr>
-    <th>Name/Business</th>
-    <th>Type</th>
-    <th>Amount</th>
-    <th>Date</th>
-  </tr>
+    <tr>
+       
+        <th>NAME/BUSINESS</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Date</th>
+      
+    </tr>
 </thead>
-<tbody> <tr>
-<td>Iphone 13 Pro Max</td>
-<td>Mobile</td>
-<td>420.84$</td>
-<td>14 Apr 2022</td>
-</tr>
-<tr>
-<td>Iphone 13 Pro Max</td>
-<td>Mobile</td>
-<td>420.84$</td>
-<td>14 Apr 2022</td>
-</tr>
-<tr>
-<td>Iphone 13 Pro Max</td>
-<td>Mobile</td>
-<td>420.84$</td>
-<td>14 Apr 2022</td>
-</tr>
-<tr>
-<td>Iphone 13 Pro Max</td>
-<td>Mobile</td>
-<td>420.84$</td>
-<td>14 Apr 2022</td>
-</tr></tbody>
+<tbody>
+    {dataInv.map(user =>
+        
+        <tr key={user.id}>
+           
+            <td><img src={user.img} width="60px" alt=''/> {user.title} <div className='smalll'><small>{user.small}</small></div></td>
+           
+            <td>{user.type}</td>
+            <td>{user.Amount}</td>
+            <td>{user.date}</td>
+           
+           
+           
+        </tr>
+       
+    )}
+</tbody>
 </table>
 </div>
   
@@ -206,41 +289,13 @@ const Dashboard = () => {
            
              
           </div>
-          <div class="container">
-    <div class="row">
-        
-          <div class="articles card">
-          
+       <div>
+          {dataa.map(user =>
             
-            <div className="card-body ">
-              <div className="item d-flex align-items-center">
-                <div class="image"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." class="img-fluid rounded-circle"/></div>
-                <div className="text "><a href="#">
-                    <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Aria Smith.   </small></div>
-              </div>
-              <div class="item d-flex align-items-center">
-                <div class="image"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="..." class="img-fluid rounded-circle"/></div>
-                <div class="text"><a href="#">
-                    <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Frank Williams.   </small></div>
-              </div>
-              <div class="item d-flex align-items-center">
-                <div class="image"><img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="..." class="img-fluid rounded-circle"/></div>
-                <div class="text"><a href="#">
-                    <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Ashley Wood.   </small></div>
-              </div>
-              <div class="item d-flex align-items-center">
-                <div class="image"><img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="..." class="img-fluid rounded-circle"/></div>
-                <div class="text"><a href="#">
-                    <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Jason Doe.   </small></div>
-              </div>
-              <div class="item d-flex align-items-center">
-                <div class="image"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..." class="img-fluid rounded-circle"/></div>
-                <div class="text"><a href="#">
-                    <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Sam Martinez.   </small></div>
-              </div>
-            </div>
-          </div>
-        </div>
+             <li className='ull'>< img src={user.img} alt={user.title} /><div className='tt'>{user.title}</div> <br/><small>{user.date}</small> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;   {user.paymentValue}</li>
+            
+            
+            )}
         </div>
         </div>
 
