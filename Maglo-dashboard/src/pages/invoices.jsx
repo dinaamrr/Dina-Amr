@@ -1,8 +1,8 @@
 import React ,{useState} from 'react'
 import TopBar from '../components/top-nav/top-nav'
-import SmartTable from "react-next-table";
+
 import '../styles/invoices.css'
-import "react-next-table/dist/SmartTable.css";
+
 import ReactSearchBox from "react-search-box";
 import Badge from 'react-bootstrap/Badge';
 import "bootstrap/dist/css/bootstrap.min.css";
