@@ -91,7 +91,7 @@ const  dataInv = [
   
   
     {
-      "img":require('../assets/images/sajib.png') ,
+      "img":require('../assets/images/netflix.png') ,
       "title": "Netfilx Subscription",
       "status":"Paid",
       "type":"01",
@@ -104,7 +104,7 @@ const  dataInv = [
     },
   
     {
-      "img":require('../assets/images/profile-02.png'),
+      "img":require('../assets/images/sajib.png'),
       "title": "Sajib Rahman",
       "status":"Paid",
       "type":"Withdraw",
@@ -119,16 +119,10 @@ const  dataInv = [
 
     
 const Invoices = () => {
-    // const [searchField, setSearchField] = useState('');
-    // const filteredData= dataInv.filter((data)=>{
-    //    return data.category.toLocaleLowerCase().includes(searchField);
-    // })
- 
-    // const searchChange = (event) => {
-    //     const searchFieldString = event.target.value.toLocaleLowerCase();
-    //     setSearchField(searchFieldString);
-    // }
+   
+    const [filteredList, setFilteredList] =  useState("");
 
+   
     return (
         <main>
         <div className="container">
@@ -141,7 +135,7 @@ const Invoices = () => {
                   <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
                 </svg>
               </button>
-              <input className='search' type="search" placeholder="Search" />
+              <input className='search' type="search" placeholder="Search" onChange={(e)=> setFilteredList(e.target.value)} />
             </div>
           </div>
             <table className="table">
@@ -156,7 +150,11 @@ const Invoices = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {dataInv.map(user =>
+                {dataInv.filter((data)=>
+
+                data.title.toLowerCase().includes(filteredList)
+                
+                    ).map((user =>
                         
                         <tr key={user.id}>
                             <td><img src={user.img}  width='40px'alt=''/>{user.title} <br/><small>{user.invoiceId}</small></td>
@@ -170,7 +168,7 @@ const Invoices = () => {
                            
                         </tr>
                        
-                    )}
+                    ))}
                 </tbody>
             </table>
         </div>
