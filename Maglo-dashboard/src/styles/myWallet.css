@@ -3,12 +3,7 @@
     margin-right: 50px;
    
 }
-.green{
-    color: green;
-}
-.red{
-    color:red;
-}
+
 
 .dashboard-spending-card-main-title{
     padding-top: 30px;
@@ -16,7 +11,12 @@
 .dashboard-spending-card-mainn{
    display: inline;
 }
-.column-one {
+.column-onee {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+  }
+  .column-twoo {
     width: 35%;
     display: flex;
     flex-direction: column;
@@ -24,12 +24,7 @@
   .column {
     margin-top: 2em;
   }
-  .reccuring-expense {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--border-one);
-    padding: 0 0 1em 0;
-  }
+  
   .recent-expenses-container {
     border: 1px solid var(--border-one);
     width: 100%;
@@ -48,4 +43,58 @@
     font-weight: 600;
     font-size: 1.2rem;
     color: var(--text-one);
+  }
+ 
+  
+  .btn{
+box-sizing: border-box;
+width: 354px;
+height: 48px;
+background: #F8F8F8;
+border: 1px solid #F5F5F5;
+border-radius: 10px;
+border: 1px solid #F5F5F5;
+border-radius: 10px;
+border: 2px solid #29A073;
+
+
+color: #29A073;
+
+
+
+
+
+  }
+
+  .mw small{
+    color:gray;
+    font-weight: lighter;
+    margin-left: 7%;
+  }
+  .sss{
+    color: gray;
+    font-weight: lighter;
+    padding-bottom: 10%;
+  }
+
+
+  .expenses-title hr{
+   
+  
+    color:black;
+   
+    width: 550px;
+  }
+  .expenses-title li{
+    display: inline;
+    font-weight: lighter;
+    font-size: small;
+  }
+  .expenses-view-all {
+    font-weight: lighter;
+    font-size: 0.9rem;
+   
+    display: flex;
+    align-items: center;
+    text-decoration: none;
   }
