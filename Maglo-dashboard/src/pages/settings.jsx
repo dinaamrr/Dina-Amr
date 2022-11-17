@@ -9,70 +9,62 @@ const Settings = () => {
     <div className="settings__wrapper">
     
 
-      <div className="settings__top">
-        <button className="setting__btn">My Details</button>
-        <button className="setting__btn active__btn">Profile</button>
-        <button className="setting__btn">Password</button>
-        <button className="setting__btn">Email</button>
-        <button className="setting__btn">Notification</button>
-      </div>
+    
 
       <div className="details__form">
-        <h2 className="profile__title">Profile</h2>
+        <h2 className="profile__title">Account Information</h2>
         <p className="profile__desc">
-          Update your photo and personal details here
+          Update your account information
         </p>
         <form>
+        <h5 className="profile__title">Personal Information</h5>
           <div className="form__group">
             <div>
-              <label>Live in</label>
-              <input type="text" placeholder="Sylhet, Bangladesh" />
+              <label>First Name</label>
+              <input type="text" placeholder="Mahfuzul Islam" />
             </div>
 
             <div>
-              <label>Street</label>
-              <input type="text" placeholder="SYL 3108" />
-            </div>
-          </div>
-
-          <div className="form__group">
-            <div>
-              <label>Email</label>
-              <input type="email" placeholder="example@gmail.com" />
-            </div>
-
-            <div>
-              <label>Phone Number</label>
-              <input type="number" placeholder="+880 17*******" />
+              <label>Last</label>
+              <input type="text" placeholder="Nabil" />
             </div>
           </div>
 
           <div className="form__group">
             <div>
               <label>Date of Birth</label>
-              <input type="date" placeholder="dd/mm/yyyy" />
+              <input type="email" placeholder="27/09/1998" />
             </div>
 
             <div>
-              <label>Gender</label>
-              <input type="text" placeholder="Male" />
+              <label>Mobile Number</label>
+              <input type="text" placeholder="+123 456 7890" />
             </div>
           </div>
 
           <div className="form__group">
             <div>
-              <label>Your Photo</label>
-              <p className="profile-img__desc">
-                This will be displayed in your profile
-              </p>
-              <input type="file" placeholder="choose file" />
+              <label>Email</label>
+              <input type="email" placeholder="hellouihut@gmail.com" />
             </div>
 
-            <div className="profile__img-btns">
-              <button className="dlt__btn">Delete</button>
-              <button className="update__btn">Update</button>
-            </div>
+          
           </div>
+          <div className="form__group">
+          <div>
+            <label>New Password</label>
+            <input type="password" placeholder="••••••••" />
+          </div>
+
+          <div>
+            <label>Confirm Password</label>
+            <input type="password" placeholder="••••••••" />
+          </div>
+          
+        </div>
+
+          
+          
         </form>
       </div>
     </div>
