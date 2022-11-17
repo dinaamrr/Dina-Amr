@@ -62,7 +62,7 @@ const Signup = () => {
               type='text'
               name='fullName'
               id='fullName'
-              placeholder='Irumi Desu'
+              placeholder='enter your full name'
              
               required={true}
               onChange={(event) =>
@@ -74,7 +74,7 @@ const Signup = () => {
               type='email'
               name='email'
               id='email'
-              placeholder='irumi@desu.com'
+              placeholder='enter your email'
               onChange={(event) =>
                 setValues((prev) => ({ ...prev, email: event.target.value }))
               }
@@ -106,7 +106,7 @@ const Signup = () => {
           </form>
         </div>
       </div>
-      <img
+      <img className='hand-image'
         src={image} alt=''
       />
       
