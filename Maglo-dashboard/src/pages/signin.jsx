@@ -8,7 +8,7 @@ import logo from '../assets/images/logo.png';
 import { signInWithGooglePopup,createUserDocFromAuth } from "../firebase/firebase";
 import { useAuth } from '../contexts/AuthContext';
 const Signin = () => {
-    const { login } = useAuth();
+    const { login,setCurrentUser,currentUser} = useAuth();
     const navigation = useNavigate();
     const [formData, setFormData] = useState({
       email: '',
@@ -77,10 +77,10 @@ const Signin = () => {
     const signInWithGoogle = async () => {
         const { user } = await signInWithGooglePopup();
         await createUserDocFromAuth(user);
-    // setCurrentUser(user);
-    // if (currentUser) {
+    setCurrentUser(user);
+    if (currentUser) {
           window.location.pathname = '/dashboard';
-    // }
+     }
       };
     
   return (
