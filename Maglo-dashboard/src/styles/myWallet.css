@@ -98,3 +98,11 @@ color: #29A073;
     align-items: center;
     text-decoration: none;
   }
+  .pv{
+    display: inline;
+    margin-left: 280px;
+  }
+  .pvv{
+    display: inline;
+    margin-left: 300px;
+  }
