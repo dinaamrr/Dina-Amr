@@ -5,7 +5,6 @@ import {FaWallet} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import {MdKeyboardArrowRight} from 'react-icons/md'
 import card from '../assets/images/Capture.PNG'
-import image from '../assets/images/apple.png'
 
 import {
     LineChart,
@@ -13,9 +12,7 @@ import {
     XAxis,
     YAxis,
     CartesianGrid,
-    Tooltip,
-    Legend,
-    ResponsiveContainer,
+   
   } from 'recharts';
 
   const  dataa = [
@@ -289,10 +286,10 @@ const Dashboard = () => {
            
              
           </div>
-       <div>
+       <div className='ll'>
           {dataa.map(user =>
             
-             <li className='ull'>< img src={user.img} alt={user.title} /><div className='tt'>{user.title}</div> <br/><small>{user.date}</small> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;   {user.paymentValue}</li>
+             <li className='ull'>< img src={user.img} alt={user.title} /><div className='tt'>{user.title}</div> <br/><small>{user.date}</small> <div className='pp'>{user.paymentValue}</div></li>
             
             
             )}
