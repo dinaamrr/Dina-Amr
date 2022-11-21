@@ -5,45 +5,88 @@ import {FcGoogle} from 'react-icons/fc'
 import logo from '../assets/images/logo.png';
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../firebase/firebase";
-import { createUserWithEmailAndPassword, updateProfile ,onAuthStateChanged } from "firebase/auth";
-const Signup = () => {
-    const navigate = useNavigate();
-    const [values, setValues] = useState({
-      name: "",
-      email: "",
-      pass: "",
-    });
-    onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser);
-      });
-    const [setUser] = useState({});
 
-    const [errorMsg, setErrorMsg] = useState("");
-    const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+import { useAuth } from '../contexts/AuthContext';
+
+const Signup = () => {
+
+    const { signup, updateUser } = useAuth();
+    const navigation = useNavigate();
+    const [formData, setFormData] = useState({
+      fullName: '',
+      email: '',
+      password: '',
+    });
+    const [errMsg, setErrMsg] = useState('');
   
-    const handleSubmission = () => {
-      if (!values.name || !values.email || !values.pass) {
-        setErrorMsg("Fill all fields");
-        return;
-      }
-      setErrorMsg("");
-  
-      setSubmitButtonDisabled(true);
-      createUserWithEmailAndPassword(auth, values.email, values.pass)
-        .then(async (res) => {
-          setSubmitButtonDisabled(false);
-          const user = res.user;
-          await updateProfile(user, {
-            displayName: values.name,
+
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const { email, password, fullName } = formData;
+        try {
+          const { user } = await signup(email, password);
+          await updateUser(user,   {displayName: formData.fullName});
+          console.log(user);
+         
+           
+          navigation('/');
+        } catch (error) {
+           
+          setErrMsg(() => {
+            switch (error.code) {
+
+              case 'auth/email-already-in-use':
+                return alert('Email is already in use. Please use another email');
+    
+              default:
+                return errMsg;
+            }
           });
-          navigate("/");
-        })
-        .catch((err) => {
-          setSubmitButtonDisabled(false);
-          setErrorMsg(err.message);
-        });
-    };
+          setFormData({
+            fullName: '',
+            email: '',
+            password: '',
+          });
+        }
+      }
+
+    // const navigate = useNavigate();
+    // const [values, setValues] = useState({
+    //   name: "",
+    //   email: "",
+    //   pass: "",
+    // });
+    // onAuthStateChanged(auth, (currentUser) => {
+    //     setUser(currentUser);
+    //   });
+    // const [setUser] = useState({});
+
+    // const [errorMsg, setErrorMsg] = useState("");
+    // const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+  
+    // const handleSubmission = () => {
+    //   if (!values.name || !values.email || !values.pass) {
+    //     setErrorMsg("Fill all fields");
+    //     return;
+    //   }
+    //   setErrorMsg("");
+  
+    //   setSubmitButtonDisabled(true);
+    //   createUserWithEmailAndPassword(auth, values.email, values.pass)
+    //     .then(async (res) => {
+    //       setSubmitButtonDisabled(false);
+    //       const user = res.user;
+    //       await updateProfile(user, {
+    //         displayName: values.name,
+    //       });
+    //       navigate("/");
+    //     })
+    //     .catch((err) => {
+    //       setSubmitButtonDisabled(false);
+    //       setErrorMsg(err.message);
+    //     });
+    // };
   
   return (
    
@@ -66,7 +109,7 @@ const Signup = () => {
              
               required={true}
               onChange={(event) =>
-                setValues((prev) => ({ ...prev, name: event.target.value }))
+                setFormData((prev) => ({ ...prev, fullName: event.target.value }))
               }
             />
             <label htmlFor='email'>Email</label>
@@ -76,7 +119,7 @@ const Signup = () => {
               id='email'
               placeholder='enter your email'
               onChange={(event) =>
-                setValues((prev) => ({ ...prev, email: event.target.value }))
+                setFormData((prev) => ({ ...prev, email: event.target.value }))
               }
               required={true}
             />
@@ -88,14 +131,14 @@ const Signup = () => {
               id='password'
               placeholder='Create your password'
               onChange={(event) =>
-                setValues((prev) => ({ ...prev, pass: event.target.value }))
+                setFormData((prev) => ({ ...prev, password: event.target.value }))
               }
               required={true}
               minLength={8}
             />
             
 
-            <button className='signup-btn'  onClick={handleSubmission} disabled={submitButtonDisabled}>Create Account</button>
+            <button className='signup-btn'  onClick={handleSubmit} >Create Account</button>
             <button className='signup-google-btn' type='button'>
             <FcGoogle/>
               Sign up with google
