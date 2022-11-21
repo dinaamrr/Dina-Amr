@@ -3,9 +3,7 @@ import TopBar from '../components/top-nav/top-nav'
 import card from '../assets/images/Capture.PNG'
 import balance from '../assets/images/card.PNG'
 import '../styles/myWallet.css'
-import {AiOutlineArrowUp} from 'react-icons/ai'
-import { Link } from 'react-router-dom';
-import {AiOutlineArrowDown} from 'react-icons/ai'
+
 import {BsSearch} from 'react-icons/bs';
 import {AiOutlinePlus} from 'react-icons/ai';
 const  data = [
@@ -81,11 +79,9 @@ const MyWallet = () => {
 
 
 <div className='chart-container'>
-<div className='chart-container-header'>
-  <h3>Working Capital</h3>
-  </div>
+
  
-  <div>
+  <div  classname='balance'>
   <img src={balance}alt=''/>
   </div>
   
@@ -120,7 +116,7 @@ const MyWallet = () => {
             <div>
             {data.map(user =>
            
-               <li className='mw'>< img src={user.img} width="40px"alt={user.title} />{user.title} <br/><small>{user.date}</small> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{user.paymentValue}</li>
+               <li className='mw'>< img src={user.img} width="40px"alt={user.title} />{user.title} <br/><small>{user.date}</small> <div className='pv'>{user.paymentValue}</div></li>
               
              
               )}
@@ -136,7 +132,7 @@ const MyWallet = () => {
             <div>
             {upComingPayments.map(user =>
               
-               <li className='mw'>< img src={user.img} width="40px"alt={user.title} />{user.title} <br/><small>{user.date}</small> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  {user.paymentValue}</li>
+               <li className='mw'>< img src={user.img} width="40px"alt={user.title} />{user.title} <br/><small>{user.date}</small><div className='pvv'>{user.paymentValue}</div></li>
               
              
               )}
