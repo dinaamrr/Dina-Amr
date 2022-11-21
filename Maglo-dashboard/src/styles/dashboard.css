@@ -106,10 +106,20 @@
   }
   li {
     list-style-type: none;
+   
   }
+  /* .ll{
+    display: flex;
+    justify-content: space-between;
+  } */
   .tt{
     display: inline;
     margin-left: 5px;
+  }
+  .pp{
+    display: inline;
+    justify-content: space-between;
+    margin-left: 100px;
   }
   ul img{
     margin-right: 30px;
