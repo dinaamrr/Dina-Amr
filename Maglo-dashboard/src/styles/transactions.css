@@ -1,8 +1,0 @@
-.tconatiner{
-    overflow-x: hidden;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
-    margin: 2em auto 0;
-}
