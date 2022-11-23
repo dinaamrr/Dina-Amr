@@ -2,7 +2,7 @@ import React from 'react'
 import TopBar from '../components/top-nav/top-nav'
 import card from '../assets/images/Capture.PNG'
 import balance from '../assets/images/card.PNG'
-import '../styles/myWallet.css'
+import '../styles/myWallet.scss'
 
 import {BsSearch} from 'react-icons/bs';
 import {AiOutlinePlus} from 'react-icons/ai';
