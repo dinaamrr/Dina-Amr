@@ -1,6 +1,6 @@
 import React from 'react'
 import TopBar from '../components/top-nav/top-nav'
-import '../styles/settings.css'
+import '../styles/settings.scss'
 const Settings = () => {
   return (
     <div className="settings">
