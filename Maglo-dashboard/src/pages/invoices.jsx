@@ -1,7 +1,7 @@
 import React ,{useState} from 'react'
 import TopBar from '../components/top-nav/top-nav'
 
-import '../styles/invoices.css'
+import '../styles/invoices.scss'
 
 import ReactSearchBox from "react-search-box";
 import Badge from 'react-bootstrap/Badge';
