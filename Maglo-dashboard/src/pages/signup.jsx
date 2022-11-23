@@ -1,5 +1,5 @@
 
-import '../styles/signup.css'
+import '../styles/signup.scss'
 import image from '../assets/images/Image.png'
 import {FcGoogle} from 'react-icons/fc'
 import logo from '../assets/images/logo.png';
