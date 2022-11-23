@@ -1,7 +1,7 @@
 import React ,{useState} from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 // import { signInWithEmailAndPassword } from "firebase/auth"
-import '../styles/signin.css'
+import '../styles/signin.scss'
 import image from '../assets/images/Image.png'
 import {FcGoogle} from 'react-icons/fc'
 import logo from '../assets/images/logo.png';
