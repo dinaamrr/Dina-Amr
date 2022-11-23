@@ -1,7 +1,7 @@
 import React ,{useState} from 'react'
 import TopBar from '../components/top-nav/top-nav'
 
-import '../styles/transactions.css'
+import '../styles/transactions.scss'
 import Badge from 'react-bootstrap/Badge';
 
 
