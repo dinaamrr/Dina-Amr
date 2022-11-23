@@ -1,5 +1,5 @@
 import {React} from 'react'
-import '../styles/dashboard.css'
+import '../styles/dashboard.scss'
 import TopBar from '../components/top-nav/top-nav'
 import {FaWallet} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
